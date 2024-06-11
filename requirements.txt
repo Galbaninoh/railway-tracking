@@ -1,0 +1,5 @@
+streamlit
+cloudscraper
+requests
+deep_translator
+datetime
