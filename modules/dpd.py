@@ -20,13 +20,6 @@ headers = {
     "Referrer-Policy": "strict-origin-when-cross-origin"
 }
 
-username = "s3bdolst8u8krc7-country-it"
-password = "xkjvhet7fs68iq2"
-proxy = "rp.proxyscrape.com:6060"
-proxy_auth = "{}:{}@{}".format(username, password, proxy)
-proxies = {
-    "http":"http://{}".format(proxy_auth)
-}
 
 def convert_to_unix_timestamp(date_string):
     date_obj = datetime.datetime.strptime(date_string, "%Y-%m-%dT%H:%M:%S")
@@ -34,7 +27,7 @@ def convert_to_unix_timestamp(date_string):
     return timestamp
 
 def track(tracking:str):
-    r = s.get("https://tracking.dpd.de/rest/plc/en_US/" + tracking, headers=headers, proxies=proxies)
+    r = s.get("https://tracking.dpd.de/rest/plc/en_US/" + tracking, headers=headers)
     try:
         updates = r.json()["parcellifecycleResponse"]["parcelLifeCycleData"]["scanInfo"]["scan"]
         result = []
