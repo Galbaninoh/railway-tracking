@@ -24,7 +24,7 @@ st.title("🚆 EUR-Railway Tracking")
 # Introductory message
 st.markdown("""
 Welcome to the EUR-Railway package tracking system! 
-Enter your DPD tracking code to see real updates.
+Enter your DPD tracking code to see updates.
 """)
 
 # Input for the tracking code
